@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userGrid = document.querySelector('.grid-user')
+    const userGrid= document.querySelector('.grid-user')
     const computerGrid = document.querySelector('.grid-computer')
     const displayGrid = document.querySelector('.grid-display')
     const ships = document.querySelectorAll('.ship')
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.querySelector('#start')
     const rotateButton = document.querySelector('#rotate')
     const turnDisplay = document.querySelector('#whose-go')
-    const infoDisplay = document.querySelector('#info')
+    const infoDisplay= document.querySelector('#info')
     const setupButtons = document.getElementById('setup-buttons')
     const userSquares = []
     const computerSquares = []
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     //Create Board
     function gameBoard(grid, squares) {
-      for (let i = 0; i < width*width; i++) {
-        const square = document.createElement('div')
+      for (let i= 0; i < width*width; i++) {
+        const square= document.createElement('div')
         square.dataset.id = i
         grid.appendChild(square)
         squares.push(square)
@@ -102,13 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function generate(ship) {
       let randomDirection = Math.floor(Math.random() * ship.directions.length)
       let current = ship.directions[randomDirection]
-      if (randomDirection === 0) direction = 1
-      if (randomDirection === 1) direction = 10
-      let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
+      if (randomDirection=== 0) direction = 1
+      if (randomDirection=== 1) direction = 10
+      let randomStart= Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
   
       const isTaken = current.some(index => computerSquares[randomStart + index].classList.contains('taken'))
-      const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
-      const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
+      const isAtRightEdge = current.some(index => (randomStart + index) % width=== width - 1)
+      const isAtLeftEdge = current.some(index => (randomStart + index) % width=== 0)
   
       if (!isTaken && !isAtRightEdge && !isAtLeftEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
   
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.innerHTML = `You sunk the ${enemy}'s submarine`
         submarineCount = 10
       }
-      if (cruiserCount === 3) {
+      if (cruiserCount=== 3) {
         infoDisplay.innerHTML = `You sunk the ${enemy}'s cruiser`
         cruiserCount = 10
       }
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.innerHTML = `You sunk the ${enemy}'s battleship`
         battleshipCount = 10
       }
-      if (carrierCount === 5) {
+      if (carrierCount=== 5) {
         infoDisplay.innerHTML = `You sunk the ${enemy}'s carrier`
         carrierCount = 10
       }
